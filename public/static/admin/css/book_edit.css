@@ -1,0 +1,71 @@
+ul,li{
+	margin:0;
+	padding:0;
+	border:none;
+}
+ul,li{
+	list-style: none;
+}
+.book_edit .ibox-content .book_name{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	line-height: 30px;
+}
+.book_edit .ibox-content .title_ul{
+	border:1px solid #ccc;
+	overflow: hidden;
+	width: 100%;
+	border-right: none;
+	border-bottom: none;
+}
+.book_edit .ibox-content .title_ul li{
+	float: left;
+	display: inline-block;
+	width: 33.3%;
+	text-align: center;
+	border-right: 1px solid #ccc;
+	line-height: 30px;
+}
+.book_edit .ibox-content .book_con{
+	border:1px solid #ccc;
+	overflow: hidden;
+	width: 100%;
+	border-top: none;
+}
+.book_edit .ibox-content .book_con li{
+	border-top: 1px solid #ccc;
+	overflow: hidden;
+}
+.book_edit .ibox-content .book_con li .con_name{
+	display: inline-block;
+	width: 33.3%;
+	text-align: center;
+	line-height: 40px;
+	border-right: 1px solid #ccc;
+	float: left;
+}
+.book_edit .ibox-content .book_con li form{
+	float: left;
+	width: 53%;
+}
+.book_edit .ibox-content .book_con li form .page_num{
+	width: 20%;
+	margin-left: 120px;
+	margin-top: 10px;
+	text-align: center;
+}
+.book_edit .ibox-content .book_con li form .sub_btn{
+	float: right;
+	margin-top: 5px;
+}
+/*总页数*/
+.book_edit .ibox-content .book_con li.total{
+	border-top: 1px solid #ccc;
+	overflow: hidden;
+	background: #eee;
+}
+.book_edit .ibox-content .total_btn{
+	margin:30px auto;
+	display: block;
+}

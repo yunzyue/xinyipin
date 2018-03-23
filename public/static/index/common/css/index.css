@@ -1,0 +1,84 @@
+body,html,div,h1,h2,h3,h4,p,img,a,span,ul,li,input,i,b,label,button,form,select{
+	margin: 0;
+	padding:0;
+	border: none;
+}
+body{
+	background: #fff;
+	background-size: 100%;
+	color:#333;
+	font-family: MicrosoftYaHei;
+    font-size: 14px;
+}
+body,html{
+	height: 100%;
+}
+img{
+	display: block;
+}
+a{
+	cursor: pointer;
+	text-decoration:none !important;
+	color:#333;
+}
+a:hover{
+	color: #4fc2b9;
+}
+li{
+	list-style:none;
+}
+i,b{
+	font-style: normal;
+}
+.float_left{
+	float: left;
+}
+.float_right{
+	float: right;
+}
+#shade_box{
+	display: none;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity:0.3;
+    z-index: 999;
+}
+
+/*音频*/
+.hctrol_audio{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 300px;
+	height: 80px;
+	background: #ccc;
+	border-radius: 5px;
+	display: none;
+}
+.hctrol_audio>.close_aux{
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	cursor: pointer;
+}
+.hctrol_audio>.mu_title{
+	width: 260px;
+	padding: 3px 20px;
+	font-size: 13px;
+	text-align: left;
+	margin-top: 6px;
+}
+.hctrol_audio>.close_aux:hover{
+	color: #4fc2b9;
+}
+.hctrol_audio>audio{
+	position: absolute;
+	bottom: 10px;
+}

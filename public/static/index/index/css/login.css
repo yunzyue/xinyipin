@@ -1,0 +1,369 @@
+*{
+	margin: 0;
+	padding:0;
+}
+img{
+	display: block;
+}
+a{
+	text-decoration:none;
+	color:#333;
+}
+li{
+	list-style:none;
+}
+body{
+	color:#333;
+	font-family: MicrosoftYaHei;
+    font-size: 14px;
+}
+.float_left{
+	float: left;
+}
+.index_box{
+	overflow: hidden;
+	top:0px;
+	position: relative;
+}
+
+.index_list{
+	width:20px;
+	overflow: hidden;
+	position: fixed;
+	top:491px;
+	left: 79%;
+	z-index: 999;
+	height: 100px; 
+}
+.index_list>p{
+	width: 11px;
+	height: 11px;
+	margin: 0 auto;
+	border-radius: 50%;
+	background: #fff;
+	margin-bottom: 14px;
+}
+.index_list>.atvp{
+	width: 18px;
+	height: 18px;
+}
+.index_yi{
+	width: 100%; 
+    overflow: hidden;
+    background: url(http://yunzyuetest.oss-cn-qingdao.aliyuncs.com/backg.jpg) no-repeat center;
+    background-size: cover; 
+}
+.index_yi.one{
+	position: relative;
+}
+
+.index_yi>.reg_ibde{
+	width: 1024px;
+	max-width: 1024px;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.two{
+	width: 100%; 
+    position: relative;
+    overflow: hidden;
+    background: url(http://yunzyuetest.oss-cn-qingdao.aliyuncs.com/22.jpg) no-repeat;
+    background-size: 100% 100%; 
+}
+.two .two_img1{
+	width: 324px;
+	height: 511px;
+	position: absolute;
+	top:215px;
+	left: -500px;
+	background:url(../img/img_01.png) no-repeat;
+	background-size: cover;
+}
+.two .two_img2{
+	width: 482px;
+	height: 510px;
+	position: absolute;
+	top:215px;
+	left: 1880px;
+	background:url(../img/img_02.png) no-repeat;
+	background-size: cover;
+}
+.san{
+	position: relative;
+	width: 100%; 
+    overflow: hidden;
+    background: url(http://yunzyuetest.oss-cn-qingdao.aliyuncs.com/33.jpg) no-repeat;
+    background-size: 100% 100%; 
+}
+.san .right_gif{
+	position: absolute;
+    left: 61%;
+    top: 45.2%;
+    width: 29px;
+}
+.si{
+	width: 100%; 
+	position: relative;
+    overflow: hidden;
+    background: url(http://yunzyuetest.oss-cn-qingdao.aliyuncs.com/44.jpg) no-repeat;
+    background-size: 100% 100%; 
+}
+.si .wave_box{
+	width: 100%;
+	height: 100px;
+	left: 0;
+	position: absolute;
+	bottom: 0px;
+	background: url(../img/wave.gif) center no-repeat;
+	background-size: 100% 100%;
+}
+.si .index_foot{
+	margin:0 auto;
+	width: 1024px;
+	/*height: 110px;*/
+	margin-top: 60px;
+    color: #fff;
+    overflow: hidden;
+}
+.si .index_foot .foot_left{
+	float: left;
+	width: 500px;
+}
+.si .index_foot .foot_right{
+	float: right;
+	width: 200px;
+	overflow: hidden;
+}
+.si .index_foot .foot_left ul{
+	overflow: hidden;
+}
+.si .index_foot .foot_left ul li{
+	float: left;
+	margin-right:20px;
+}
+.si .index_foot .foot_left ul li a{	
+	color: #fff;
+	line-height: 20px;
+}
+.si .index_foot .foot_left p{
+	line-height: 25px;
+}
+
+/* .si .wave_img{
+	width: 100%;
+	height: 180px;
+	left: 0;
+	position: absolute;
+	top: 200px;
+} */
+.log_header{
+	width:100%;
+	height: 70px;
+	box-shadow: 2px 2px 6px rgb(40,172,188);
+	position: fixed;
+    top: 0;
+    z-index: 500;
+    background: #60CBD5;
+}
+.log_contents{
+	width: 1024px;
+	max-width: 1024px;
+	overflow: hidden;
+	margin: 0 auto;
+	text-align: center;
+}
+.log_contents>.user_name{
+	float: left;
+	line-height: 90px;
+	display: block;
+	font-size: 14px;
+}
+.log_header>.log_contents>.log_ico{
+	display: block;
+	width:55px;
+	height: 60px;
+	float: left;
+	margin: 5px 0px 5px 20px;
+	background: url('../img/indexicon.png') -46px -27px no-repeat;
+}
+.log_header>.log_contents>.log_res{
+	float: right;
+	overflow: hidden;
+}
+.log_header>.log_contents>.log_res>a{
+	font-weight: bold;
+}
+.log_header>.log_contents>.log_res>.ind-login,.ind-logreg{
+	font-size: 20px;
+	height: 100%;
+	line-height: 70px;
+	color:#fff;
+	float: left;
+	display: inline-block;
+}
+
+
+
+.log_header>.log_contents>.log_res>.ind-login,.ind-logreg{
+	font-size: 20px;
+	height: 100%;
+	line-height: 70px;
+	color:#fff;
+	float: left;
+	display: inline-block;
+}
+
+
+
+
+
+
+.log_header>.log_contents>.log_res>.ind-login{
+	margin-right: 14px;
+}
+.log_header>.log_contents>.log_res>.ind-logreg{
+	margin-left: 14px;
+}
+.log_header>.log_contents>.log_res>span{
+	display: block;
+	width: 2px;
+	height: 20px;
+	background: #fff;
+	float: left;
+	margin-top: 26px;
+}
+.reg_tit{
+	width: 100%;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 150px;
+}
+
+.res_cont{
+	margin-top: 38px;
+	width: 100%;
+	overflow: hidden;
+}
+.res_cont .res_md{
+	width: 210px;
+	margin-left:855px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.res_cont .res_md>span{
+	font-size: 20px;
+	color: #fff;
+	float: left;
+	display: inline-block;
+}
+.res_cont .res_md>b{
+	display: inline-block;
+	width:6px;
+	height:6px;
+	border-radius: 50%;
+	float: left;
+	background: #fff;
+	margin-top: 10px;
+}
+
+
+.md_arts{
+	width: 100%;
+	overflow: hidden;
+}
+
+
+.res_login{
+	width:523px;
+	height:279px;
+	margin:0 auto;
+	margin-top: 66px;
+	background: url('../img/indexicon.png') -271px -549px no-repeat;
+	overflow: hidden;
+}
+.res_login .log_radio{
+	width: 100%;
+	margin-top: 21px;
+	overflow: hidden;
+}
+.res_login .log_radio>.radioss>span{
+	width: 16px;
+    height: 16px;
+    display: block;
+    background: url(../img/update.png) -67px -124px no-repeat;
+    position: absolute;
+    left: -22px;
+}
+.res_login .log_radio>.radioss .cheeks{
+	background: url('../img/update.png') -17px -124px no-repeat;
+}
+.res_login .log_radio>.radioss{
+	float: left;
+	position: relative;
+	width: 90px;
+	height: 20px;
+}
+.res_login .log_radio>.radioss>label{
+	font-size: 14px;
+    color: #fff;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    text-align: left;
+}
+.res_login .log_radio>.radioss>label>input[type="radio"]{
+	margin-top: 3px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: -9px;
+    position: absolute;
+    z-index: 200;
+    left: -12px;
+    opacity: 0; 
+}
+
+.res_login .log_inp{
+    width: 320px;
+    margin-left: 115px;
+	margin-top: 30px;
+	background: #fff;
+	height: 35px;
+	box-shadow: 3px 3px 6px #4fc2b9;
+}
+.res_login .log_inp>input{
+	border: 0;
+	height: 25px;
+	padding: 5px;
+	width: 310px;
+	display: inline-block;
+	float: left;
+	background:none !important;  
+    outline:none; 
+}
+.res_login .log_inp>a{
+	width: 100%;
+	height: 100%;
+	background: rgb(253,110,96);
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border:0;
+	display: block;
+	line-height: 35px;
+	cursor: pointer;
+}
+.res_login>.login_tiao{
+	width: 100%;
+	margin-top: 13px;
+}
+.res_login>.login_tiao>a{
+	font-size: 12px;
+	display: inline-block;
+	color: #fff;
+}

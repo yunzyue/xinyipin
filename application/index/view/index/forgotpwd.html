@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>忘记密码</title>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/index/index/css/forgotpwd.css">
+    <script type="text/javascript" src="__STATIC__/index/index/js/forgotpwd.js"></script>
+    <script src="__STATIC__/js/jquery.min.js"></script>
+    <script src="__STATIC__/js/jquery.cookie.js"></script>
+	<style>
+		/*.res_login .log_radio>.radioss .cheeks{*/
+			/*background: url('../img/update.png') -17px -124px no-repeat;*/
+		/*}*/
+		/*.res_login .log_radio>.radioss{*/
+			/*float: left;*/
+			/*position: relative;*/
+			/*width: 90px;*/
+			/*height: 20px;*/
+		/*}*/
+		/*.res_login .log_radio>.radioss>label{*/
+			/*font-size: 14px;*/
+			/*color: #fff;*/
+			/*float: left;*/
+			/*overflow: hidden;*/
+			/*display: inline-block;*/
+			/*width: 60px;*/
+			/*height: 20px;*/
+			/*text-align: left;*/
+		/*}*/
+		/*.res_login .log_radio>.radioss>label>input[type="radio"]{*/
+			/*margin-top: 3px;*/
+			/*display: inline-block;*/
+			/*width: 14px;*/
+			/*height: 14px;*/
+			/*margin-left: -9px;*/
+			/*position: absolute;*/
+			/*z-index: 200;*/
+			/*left: -12px;*/
+			/*opacity: 0;*/
+		/*}*/
+	</style>
+</head>
+<body>
+
+    {include file="common/forgotpwd_head" /}
+
+	<div class="forgot_cont">
+		<div class="forgot_zx">
+			<div class="forgot_for">
+				<div class="fout_tit">找回密码</div>
+
+					<div class="forphone" style="padding-left: 130px;">
+						<input type="radio" name="haha" value="1">家长</label>
+						<input type="radio" name="haha" value="2">教师</label>
+						<input type="radio" name="haha" value="3">管理者</label>
+					</div>
+
+
+					<div class="forphone">
+						<p class="for_utitle">手机号：</p>
+						<input type="text" name="fgphone" id="uphone" class="fgphone" placeholder="请输入手机号码" maxlength="11" onkeyup="value=value.replace(/[^(\d)]/g,'')">
+					</div>
+					<span class="fg_date"></span>
+					
+					<div class="forphone">
+						<p class="for_utitle">验证码：</p>
+						<input type="text" name="fgphone" id="ufgyzm" class="yzmnum" placeholder="请输入验证码" maxlength="4" onkeyup="value=value.replace(/[^(\d)]/g,'')">
+						<button type="button" class="getYzm">获取验证码</button>
+					</div>
+					<span class="fg_date"></span>
+
+					<div class="forphone">
+						<p class="for_utitle">新密码：</p>
+						<input type="password" name="newpass" id="fgpwd" class="fgphone" maxlength="16" placeholder="请输入密码（8-16位字母数字组合）">
+					</div>
+					<span class="fg_date"></span>
+
+					<div class="forphone">
+						<p class="for_utitle">确认密码：</p>
+						<input type="password" maxlength="16" name="renewpass" id="fgpwds" class="fgphone" placeholder="请再次输入密码">
+					</div>
+					<span class="fg_date"></span>
+					<input type="hidden" name="" id="cavas" value="{$character}">
+					<button class="truereg">确认提交</button>
+				<!-- </form> -->
+
+				<div class="forgot_tel">
+					<a href="#" style="margin-right: 56px;" onclick="alert('联系方式：0351-8332580  0351-8066660')">请联系客服人员解决</a>
+					<span style="color: #FF5E4E;" >没有绑定过手机？</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+//	onload = function() {
+//		var character="{$character}";
+//		var arr=document.getElementsByName("haha");
+//		for (var i=0;i<arr.length;i++){
+//			if(character==arr[i].value){
+//				arr[i].checked=true;
+//			}
+//		}
+//	}
+	var character="{$character}";
+	function test(){
+		var character="{$character}";
+		if(character==4){
+			alert("xxx");
+		}
+		$.post("./doForget", {}, function(msg) {
+
+			console.log(msg);
+
+		})
+	}
+</script>
+</html>

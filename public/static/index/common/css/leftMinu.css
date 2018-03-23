@@ -1,0 +1,45 @@
+
+.leftBar{
+	width: 40px;
+	position: fixed;
+	left:0;
+	top: 90px;
+	background: #2E3F4F;
+	overflow: hidden;
+	z-index: 10;
+	text-align: center;
+}
+.leftBar>span{
+    width: 40px;
+    height: 20px;
+    margin-top: -10px;
+    display: block;
+    background: url(../img/bar.png) no-repeat center;
+    position: absolute;
+    top:50%;
+}
+.nav_menu{
+	width: 90px;
+	background: #2E3F4F;
+	position: fixed;
+	left: 0px;
+	top: 90px;
+	overflow: hidden;
+	z-index: 10;
+	text-align: center;
+}
+.nav_menu>a{
+	font-size: 14px;
+	color: #fff;
+	padding: 0 13px;
+	display: block;
+	overflow: hidden;
+	margin-top: 90%;
+}
+.nav_menu>.charset{
+	color: #4FC2B9;
+}
+.nav_menu>a:hover{
+	color: #4FC2B9;
+	text-decoration: underline;
+}

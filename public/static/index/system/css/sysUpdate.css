@@ -1,0 +1,23 @@
+.sysUpdate{
+    width: 333px;
+    height: 360px;
+    overflow: hidden;
+    margin: 115px auto 0;
+}
+#sysUpdate_ico{
+    width: 100%;
+    height: 265px;
+    display: block;
+}
+.sysUpdate_one{
+    width: 135px;
+    font-size: 20px;
+    margin: 33px auto 10px;
+    text-align: center;
+}
+.sysUpdate_two{
+    width: 135px;
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: right;
+}

@@ -1,0 +1,67 @@
+*{
+	padding: 0;
+	margin:0;
+}
+
+.wrap_head{
+	width:98%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 10px 0;
+	background: #fff;
+}
+.fle{
+	float: left;
+}
+.wrap_head>.wrap_lis{
+	padding: 5px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.wrap_head>.wrap_lis>span{
+	display: inline-block;
+	line-height: 20px;
+	font-size: 13px;
+	float: left;
+}
+.wrap_head>.wrap_lis>input[name="title"]{
+	margin-left: 10px;
+	height: 20px;
+}
+.wrap_head>.wrap_lis>#getClass,#setType,#setData,#operation,#setState,#edData{
+	width: 100px;
+	height: 20px;
+	margin-left: 10px;
+	font-size: 12px;
+}
+.wrap_head>#demand{
+	padding: 3px 10px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	border: none;
+	margin-left: 20px;
+	margin-top: 2px;
+	border-radius: 3px;
+	background: #4fc2b9;
+}
+
+#titHead>th{
+	font-size: 13px;
+	text-align: center;
+}
+#conts tr td{
+	font-size: 12px;
+	text-align: center;
+	line-height: 18px;
+}
+.setUpdate,.setDele{
+	margin-left: 10px;
+	padding: 2px 10px;
+	background: #4fc2b9;
+	color:#fff;
+	font-size: 12px;
+	border-radius: 3px;
+	display: inline-block;
+}

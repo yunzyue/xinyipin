@@ -1,0 +1,355 @@
+﻿error_log(print_r($arr, 1)."\n", 3, "addGoods.log");
+
+清空文档操作   echo '' > test.doc
+
+
+Thinkphp中的Think\Model类提供了数据库的基本CURD（Create、Update、Read及Delete），通过该类可以很便捷的进行操作。
+Model类及扩展类主要的方法有：
+
+Create操作：
+create()（非链式） 、add()、addAll()
+支持的链式操作有：
+table 、data、field 、relation 、validate、auto 、filter、scope 、bind 、token 、comment
+Update操作
+save()、setField()、setInc()、setDec()
+支持的链式操作有：
+where、table 、alias、field、order、lock 、relation 、scope 、bind 、comment
+Read操作
+find()、select()、getField()、Count 、Max、Min 、Avg 、Sum
+支持的链式操作有：
+where 、table 、alias 、field 、order、group 、having 、join 、union 、distinct、lock、cache 、relation 、result 、scope 、bind 、comment
+Delete操作
+delete()
+支持的链式操作有：
+where 、table 、alias 、order、lock 、relation 、scope 、bind 、comment
+这些方法的可能的返回值有false/true/一位数组/二维数组/numeric(数字)/null/类本身的实例，现在就总结如下：
+
+1、链式操作：
+所以链式操作都返回Model类的实例，即可以使用该返回值继续调用实例方法。
+
+$User=M("User");
+$U1=$User->$where("id = 1");//$U1可以继续调用其他方法。
+$result=$U1->select();
+//-------一般情况下没有必要这样，下面一句代码即可实现
+$result=M("User")->$where("id = 1")->select();
+2、Create操作
+create 返回值：
+若发生错误，返回false；
+成功则返回创建的数据
+create为非链式操作，返回值为可能为布尔值，所以操作时要进行严格判断：
+$User = M("User");
+if($User->create()){
+//进行更多操作
+}
+add 返回值，addAll 返回值
+成功：如果主键是自动增长型，返回值为新增记录Id值（addAll为最大值），否则返回true；
+发生错误返回 false；
+3、update操作
+save 返回值（setField、setInc、setDec最后调用的都是save方法，所以返回值与save一致）：
+save 返回值是影响的记录数（有可能为0），更新出错返回false，因此一定要用恒等来判断是否更新失败。
+4、read操作
+find 返回值
+如果查询出错，find的返回值为false
+如果查询结果为空返回NULL，查询成功则返回一个关联数组（键值是字段名或者别名）。
+select 返回值
+如果查询出错，select的返回值是false，
+如果查询结果为空，则返回NULL，否则返回二维数组。
+getField 返回值
+如果查询出错，getField的返回值为false
+查询成功：
+getField($field):$field为一个字段,返回数据库中该字段的第一行的值
+getField($field,true):$field为一个字段,返回包含该字段的一维数组
+getField($fields):$fields为两个字段（以“,”隔开），返回array($field1=>$field2)的数组;若$field为多个字段，返回类似select的多维数组,键名为field1。
+getField($fields,”:”):$field为多个字段,返回类似array($field1=>”$field2:$field3”)的数组
+Count 、Max、Min 、Avg 、Sum返回值
+如果查询出错，返回值为false
+查询成功，则返回对应的值
+5、Delete操作
+delete 返回值：成功则返回true，查询错误则返回false
+
+
+
+php  源码下载地址    wget http://hk1.php.net/get/php-5.6.28.tar.gz/from/this/mirror
+
+php安装pcntl扩展
+php安装pcntl扩展
+1、下载一个同样版本的php（我的是php5.6.27，我下的是php5.6.28）
+
+[root@CentOS6 lamp]# wget http://hk1.php.net/get/php-5.6.28.tar.gz/from/this/mirror
+
+2、解压php:
+
+[root@CentOS6 lamp]# tar -zxvf mirror
+
+3、进入php/ext/pcntl/
+
+[root@CentOS6 php-5.6.28]# cd ext/pcntl/
+
+4、执行命令phpize
+
+[root@CentOS6 pcntl]# /usr/bin/phpize 
+Configuring for:
+PHP Api Version:         20131106
+Zend Module Api No:      20131226
+Zend Extension Api No:   220131226
+5、执行配置命令php-config
+
+[root@CentOS6 pcntl]# ./configure --with-php-config=/usr/bin/php-config
+
+6、编译make && make install
+
+[root@CentOS6 pcntl]# make && make install
+
+可能报错：
+
+Installing shared extensions:     /usr/lib/php/modules/
+make: 警告：检测到时钟错误。您的创建可能是不完整的。
+
+解决方法：
+
+进入php-5.6.28目录
+sed -i 's|PHP_FE_END|{NULL,NULL,NULL}|' ./ext/**/*.c
+sed -i 's|ZEND_MOD_END|{NULL,NULL,NULL}|' ./ext/**/*.c
+
+重新编译：
+
+[root@CentOS6 pcntl]# make && make install
+
+[root@CentOS6 pcntl]# make install
+Installing shared extensions:     /usr/lib/php/modules/
+
+
+7、修改php.ini支持pcntl
+
+[root@CentOS6 pcntl]# echo "extension=pcntl.so" >> /etc/php.ini
+
+8、查看phpinfo()，是否有pcntl扩展；
+
+
+
+
+
+/*
+2017/11/01
+yueyun
+windows环境下安装openoffice 与JDK组件，实现office文件转PDF
+ */
+1.安装openoffice 
+2.安装最新JDK组件
+3.启动openoffice   C:/Program Files(x86)/openoffice4/program/下执行soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
+4.jodconverter.2.2.2(是否需要未定)
+
+openoffice下载地址：www.openoffice.org
+JDK下载地址：百度软件中心后直接百度JDK，属于openoffice 的JAVA依赖包
+jodconverter.2.2.2 下载地址：https://sourceforge.net/projects/jodconverter/files/JODConverter/2.2.2/
+
+Linux下安装过程：http://blog.sina.com.cn/s/blog_14d78f28b0102xcsa.html
+
+出现 -bash soffice commond not found 提示时，需要设置PATH值，方法如下：
+在program目录下直接输入：export PATH=$PATH:/opt/openoffice4/program/
+
+然后继续输入：soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard   启动openoffice服务 
+
+
+参数说明：
+-nofirststartwizard:
+
+因为openoffice默认会抛出一个用户注册界面，提示用户注册产品，然后才能正常使用；一旦用户注册完毕，之后是不会再弹出这个注册框的。openoffice 2.0以上版本为避免这种情况，增加了-nofirststartwizard选项，借此绕开注册界面。
+
+-headless 选项标明openoffice运行在headless模式下的服务器上，所谓headless服务器即无需显卡、显示器、鼠标、键盘等设备可以正常运行的服务器。
+
+如果执行是还是报错，则在命令最后加&符号
+
+./soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard &
+
+
+查看服务是否成功启动：
+执行命令：
+ps –ef|grep soffice
+出现：
+root      29363  25755  0 Apr26 pts/1    00:00:00 /bin/sh /usr/bin/soffice -headless -accept=socket,host=127.0.0.1,port=8100;urp; -nofirststartwizard
+root      29377  29363  0 Apr26 pts/1    00:00:18 /opt/openoffice4/program/soffice.bin -headless -accept=socket,host=127.0.0.1,port=8100;urp; -nofirststartwizard
+root      34316  25755  0 11:09 pts/1    00:00:00 grep soffice
+ 
+或
+ 
+netstat –lnp|grep 8100
+ 
+出现：
+tcp        0      0 127.0.0.1:8100              0.0.0.0:*                   LISTEN      29377/soffice.bin
+这都表明成功启动
+
+
+/*
+2017/11/02
+yueyun
+office文件转PDF,文件格式包括（.doc .docx .ppt .pptx .xlsx）.xls无法转换，需修改文件的后缀名
+*/
+
+1.添加自定义类库到extend/office2pdf/Office2pdf.php：
+	注意事项：如果你需要调用PHP内置的类库，或者第三方没有使用命名空间的类库，记得在实例化类库的时候加上 \，来自官方手册  架构/命名空间,引入COM组件是需要写成 new \COM(); 
+2.添加common公共函数common/controller/Topdf.php/topdf()
+	
+	注意common函数的调用
+	位置：app/index/controller/Index.php/zhuanhuan()
+
+	use app\common\controller\Topdf;
+	public function zhuanhuan()
+    {
+    	$topdf = new \app\common\controller\Topdf;
+    	$topdf->topdf();
+    }
+
+/*
+2017/11/11
+数据库配置文件修改，将文件名config.sample.inc.php 改为config.inc.php
+
+内容：localhost   改为 127.0.0.1
+
+本地连接数据库时，wdcp配置数据库访问地址为%，代表所有IP均可访问，服务器上的代码连接时可以关闭，改为localhost或127.0.0.1
+
+wdcp建立的数据库与建立的网站可以没有任何关联，只要网站代码数据库连接配置文件配置为对应的数据库即可
+
+ */
+
+
+/*
+2017/11/15
+修改__STATIC__模板路径，修改文件为view.php   目录在thinkphp/library/think/view.php
+
+*/
+
+
+/*前端全局变量分配*/
+
+在父类中_initalize()初始化函数中用assign()函数分配。此后所有前端页面都可以用此分配好的变量
+
+
+
+SESSION
+
+/*前端模板应用session中的值*/
+
+{$Request.session.realname}
+
+realname就是存入session时的字段  操作为   use think\Session;  Session::set('realname','realname的值')；或用助手函数  session('值','值');
+
+
+文件下载
+
+header("Content-type:application/octet-stream");
+// header("Content-Transfer-Encoding: binary");
+header("Accept-ranges:bytes");
+header("Accept-length:".strlen($file));
+header("Content-Disposition:attachment;filename = ".$filename);
+
+有头文件就可以直接浏览器下载
+
+
+
+//错误打印 
+
+error_log(print_r($arr, 1)."\n", 3, "addGoods.log");
+
+//数据库连接不上  10060错误
+
+远程连接拒绝，原因一般是地址绑定或防火墙阻止了端口（一般是3306），此防火墙包括服务器的防火墙   也包括web服务器的防火墙（如wdcp的端口防火墙）
+
+
+
+
+
+openoffice安装网页信息
+
+
+1.3、将安装包拷贝至Linux系统，准备安装
+jdk-8u45-linux-x64.tar.gz
+Apache_OpenOffice_4.1.3_Linux_x86-64_install-rpm_zh-CN.tar.gz
+OpenOffice安装启动需要依靠java环境，所以先要安装jdk
+1.4、安装jdk
+查看系统自带或之前安装的jdk，然后删除
+命令：
+rpm -qa|grep java，rpm -qa|grep jdk，若出现
+java-1.7.0-openjdk-1.7.0.9-2.3.8.0.el6_4.i686
+java-1.6.0-openjdk-1.6.0.0-1.57.1.11.9.el6_4.i686
+ （我这里出现的java-1.7.0-openjdk-1.7.0.9-2.3.8.0.el6_4.i686是安装openoffice时的依赖库 ）
+其次，卸载系统自带jdk。
+在终端中输入“yum -y remove java-1.7.0-openjdk-1.7.0.9-2.3.8.0.el6_4.i686 ”，然后等待，等待系统卸载完自带的jdk。
+如果上面的卸载不了，则：
+rpm -e --nodeps java-1.6.0-openjdk-1.6.0.0-1.66.1.13.0.el6.x86_64
+ 
+最终在终端中显示“Complete!”，卸载Openjdk1.7完成。
+如果不想自己安装jdk，可以使用系统自带的jdk，安装openoffice过程中不会出问题，只是在启动openoffice报错，可以在最后安装jdk
+ 
+进入存放jdk包目录
+tar –zxvf jdk-8u45-linux-x64.tar.gz
+等待解压完成
+ 
+配置jdk环境变量
+打开/etc/profile
+添加环境变量：
+export JAVA_HOME=/usr/local/jdk1.6.0_45
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+export PATH JAVA_HOME CLASSPATH
+ 
+保存
+然后命令执行：
+source /etc/profile
+是配置生效
+ 
+然后输入命令：java –version
+如果出现java版本则表示安装成功
+java version "1.8.0_45"
+SE Runtime Environment (build 1.8.0_45-b14)
+64-Bit Server VM (build 25.45-b02, mixed mode)
+ 
+1.5、安装openOffice
+进入存放openOffice包目录
+执行命令：
+tar -zxv -f Apache_OpenOffice_4.0.1_Linux_x86_install-rpm_zh-CN.tar.gz
+ 
+得到：
+zh-CN
+ 
+进入zh-CN下的RPMS，执行命令：
+rpm -ivh openoffice*.rpm
+ 
+安装OpenOffice的所有组件，rpm 就会根据里面各个rpm安装包的依赖顺序依此安装各个rpm包
+ 
+组件安装完成之后，接着安装openoffice桌面集成程序
+ 
+进入desktop-integration目录
+ 
+输入ls，查看具体信息
+ 
+里面是针对4个不同inux操作系统发行版的openoffice桌面集成程序rpm包，本例是redhat，因此安装适合redhat的安装包
+ 
+找到openoffice4.0-redhat-menus-4.0-9714.noarch.rpm
+ 
+执行命令：
+rpm -ivh openoffice4.0-redhat-menus-4.0-9714.noarch.rpm
+ 
+进行安装 , 等到该命令结束，openoffice已经安装完成
+
+1.6、启动openOffice服务
+进入：cd /opt/openoffice4/ program目录
+ 
+执行命令：
+soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard &
+ 
+查看服务是否成功启动：
+执行命令：
+ps –ef|grep soffice
+出现：
+root      29363  25755  0 Apr26 pts/1    00:00:00 /bin/sh /usr/bin/soffice -headless -accept=socket,host=127.0.0.1,port=8100;urp; -nofirststartwizard
+root      29377  29363  0 Apr26 pts/1    00:00:18 /opt/openoffice4/program/soffice.bin -headless -accept=socket,host=127.0.0.1,port=8100;urp; -nofirststartwizard
+root      34316  25755  0 11:09 pts/1    00:00:00 grep soffice
+ 
+或
+ 
+netstat –lnp|grep 8100
+ 
+出现：
+tcp        0      0 127.0.0.1:8100              0.0.0.0:*                   LISTEN      29377/soffice.bin
+这都表明成功启动

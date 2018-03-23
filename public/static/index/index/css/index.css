@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding:0;
+}
+img{
+	display: block;
+}
+a{
+	text-decoration:none;
+	color:#333;
+}
+li{
+	list-style:none;
+}
+body{
+	background: #fff;
+	background-size: 100%;
+	color:#333;
+	font-family: MicrosoftYaHei;
+    font-size: 14px;
+}
+.float_left{
+	float: left;
+}
+.float_right{
+	float: right;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和合教育云用户注册页面</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/index/css/register.css">
+    <script type="text/javascript" src="__STATIC__/index/index/js/register.js"></script>
+    <script src="__STATIC__/js/jquery.min.js"></script>
+    <script src="__STATIC__/js/jquery.cookie.js"></script>
+</head>
+
+<body>
+    <div class="log_header" id="log_regis">
+        <div class="log_contents">
+            <a class="log_ico" href="{:url('/index/index/login')}"></a>
+            <div class="log_res">
+                <a class="ind-login" href="__URL__/register">注册</a>
+                <span></span>
+                <a class="ind-logreg" href="__URL__/login" style="margin-right: 20px;">登录</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="reg_cont">
+        <div class="reg_zoncon">
+             <div class="reg_jidu"></div>
+             <div class="reg_zzon">
+                <div class="reg_conlef">
+                    <div class="cheType">选择角色</div>
+                    <div class="chage_ico">
+                        <div class="person_t ches" title="2"></div>
+                        <div class="person_p" title="1"></div>
+                    </div>
+
+                    <div class="per_change">
+                        <div class="pre_bigico per_tea" title="老师"></div>
+                        <p>我是老师</p>
+                    </div>
+                </div>
+
+                <div class="reg_conrig">
+                    <form  action="{:url('index/doRegister')}" method="post" id="setLogin">
+                        <div class="reg_divs">
+                            <div class="reg_inp_s">
+                                <span><c style="margin-right: 5px;font-weight:normal; color:#ff5e4e;">*</c>手机号码：</span>
+                                <input type="text" name="tel"  id="tel" placeholder="请使用手机号码" maxlength="11" onkeyup="value=value.replace(/[^(\d)]/g,'')">
+                            </div>
+                            <p class="reg_alert"></p>
+                        </div>
+                        
+                        <div class="reg_divs">
+                            <div class="reg_inp_s">
+                                <span><c style="margin-right: 5px;font-weight:normal; color:#ff5e4e;">*</c>手机验证码：</span>
+                                <input class="yzm_reg" type="text" placeholder="请输入收到的验证码" name="code" id="codes" value="" maxlength="4" onkeyup="value=value.replace(/[^(\d)]/g,'')">
+                                <button  class="reg_btn" type="button">获取验证码</button>
+                            </div>
+                            <p class="reg_alert"></p>
+                        </div>
+                        
+                        <div class="reg_divs">
+                            <div class="reg_inp_s">
+                                <span><c style="margin-right: 5px;font-weight:normal; color:#ff5e4e;">*</c>密码：</span>
+                                <input type="password" name="pass" id="pass" maxlength="16" placeholder="请输入密码（8-16位字母数字组合）" value="">
+                            </div>
+                            <p class="reg_alert"></p>
+                        </div>
+
+                        <div class="reg_divs">
+                            <div class="reg_inp_s">
+                                <span><c style="margin-right: 5px;font-weight:normal; color:#ff5e4e;">*</c>确认密码：</span>
+                                <input type="password" name="repass" maxlength="16" id="repass" placeholder="请再次输入密码">
+                            </div>
+                            <p class="reg_alert"></p>
+                        </div>
+
+                        <div class="reg_divs">
+                            <div class="reg_inp_s">
+                                <span><c style="margin-right: 5px;font-weight:normal; color:#ff5e4e;">*</c>学校邀请码：</span>
+                                <input type="text" name="vcode" id="vcode" placeholder="请输入学校邀请码">
+                            </div>
+                            <p class="reg_alert"></p>
+                        </div>
+                        <input type="hidden" name="character" id="papapa" value="2">
+                        <div class="reg_divs">
+                            <input checked="checked" type="checkbox" name="allow" id="allows">
+                            <span>阅读并同意</span>
+                            <span style="color:rgb(0,51,153);">《和合教育云注册用户使用服务条款》</span>
+                        </div>
+                        <button class="reg_butts">注册</button>
+                    </form>
+                 </div>
+            </div>
+             
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+

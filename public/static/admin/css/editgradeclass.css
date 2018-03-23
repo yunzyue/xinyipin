@@ -1,0 +1,30 @@
+.titles{
+	width:300px;
+	border:1px solid #ccc;
+	height: 31px;
+	padding: 0 10px;
+	font-size: 14px;
+}
+.lis_btn{
+	padding: 7px 10px;
+	margin-left: 30px;
+	border: 0;
+	width: 50px;
+	text-align: center;
+	background: #449d44;
+	font-size: 14px;
+	color: #fff;
+}
+#callBack{
+	padding: 7px 10px;
+	margin-left: 30px;
+	width: 50px;
+	text-align: center;
+	background: #449d44;
+	font-size: 14px;
+	color: #fff;
+	display: inline-block;
+	position: absolute;
+	top: 8px;
+    left: 466px;
+}

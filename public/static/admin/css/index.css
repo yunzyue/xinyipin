@@ -1,0 +1,161 @@
+body,html,div,h1,h2,h3,h4,p,img,a,span,ul,li,input,i,b,label,button,form,select{
+	margin: 0;
+	padding:0;
+	border: none;
+}
+body{
+	background: #fff;
+	background-size: 100%;
+	color:#333;
+	font-family: MicrosoftYaHei;
+    font-size: 14px;
+}
+body,html{
+	height: 100%;
+}
+img{
+	display: block;
+}
+a{
+	cursor: pointer;
+	text-decoration:none;
+	color:#333;
+}
+a:hover{
+	color: #4fc2b9;
+}
+li{
+	list-style:none;
+}
+i,b{
+	font-style: normal;
+}
+
+/*头*/
+.admin_info{
+	width: 100%;
+	overflow: hidden;
+}
+.admin_info>.admin_head{
+	width: 1215px;
+	max-width: 1215px;
+	margin: 0 auto;
+}
+.admin_info>.admin_head>.admin_tit{
+	margin-top: 29px;
+	height: 32px;
+	width: 138px;
+	background: url('../images/admins.png') -34px -29px no-repeat;
+}
+/*内容*/
+.admin_con{
+	width: 1215px;
+	max-width: 1215px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.admin_con>.adcon_s{
+	width: 100%;
+	height: 112px;
+	margin-bottom: 26px;
+	margin-top: 40px;
+}
+.admin_con>.adcon_s>.adcon_tit{
+	width: 77px;
+	line-height: 112px;
+	font-size: 14px;
+	float: left;
+	display: block;
+}
+.admin_con>.adcon_s>.adcon_uselis{
+	width: 1138px;
+	float: left;
+	height: 100%;
+}
+.adcon_s>.adcon_uselis>.adcon_li{
+	width: 225px;
+	height: 100%;
+	border-radius: 10px;
+	float: left; 
+	box-shadow: 5px 4px 6px #e3e3e3;
+}
+.adcon_s>.adcon_uselis>.adcon_li~.adcon_li{
+	margin-left: 78px;
+}
+.adcon_uselis>.adcon_li>.adcio-lef{
+	width: 89px;
+	height: 100%;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	float: left;
+}
+.adcon_uselis>.adcon_li>.teacher{
+	background: url('../images/admins.png') -109px -100px no-repeat;
+}
+.adcon_uselis>.adcon_li>.student{
+	background: url('../images/admins.png')  -411px -100px  no-repeat;
+}
+.adcon_uselis>.adcon_li>.parent{
+	background: url('../images/admins.png')  -708px -100px  no-repeat;
+}
+.adcon_uselis>.adcon_li>.manager{
+	background: url('../images/admins.png') -1015px -100px no-repeat;
+}
+.adcon_uselis>.adcon_li>.microClass{
+	background: url('../images/admins.png') -109px -242px  no-repeat;
+}
+.adcon_uselis>.adcon_li>.book{
+	background: url('../images/admins.png') -411px -242px no-repeat;
+}
+.adcon_uselis>.adcon_li>.testPaper{
+	background: url('../images/admins.png') -708px -242px no-repeat;
+}
+.adcon_uselis>.adcon_li>.Courseware{
+	background: url('../images/admins.png') -1015px -242px no-repeat;
+}
+.adcon_uselis>.adcon_li>.adcio_rig{
+	width: 136px;
+	height: 100%;
+	float: left;
+}
+.adcon_li>.adcio_rig>h2{
+	width: 100%;
+	text-align: center;
+	font-size: 41px;
+	font-weight: bold;
+	margin:21px 0 19px 0; 
+}
+.adcon_li>.adcio_rig>.adolc-span{
+	width: 96px;
+	margin: 0 auto;
+	height: 16px;
+	text-align: center;
+}
+.adcon_li>.adcio_rig>.adolc-span>span{
+	font-size: 16px;
+	width: 48px;
+	margin:0 auto;
+	text-align: center;
+	line-height: 16px;
+}
+
+/*柱状图*/
+.achart_adcoin{
+	width: 1215px;
+	max-width: 1215px;
+	height: 410px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.achart_adcoin #users{
+	box-shadow: 5px 4px 6px #e3e3e3;
+}
+.achart_adcoin #main{
+	box-shadow: 5px 4px 6px #e3e3e3;
+}
+
+
+/*表格*/
+.achart_adcoin td{
+	text-align: center;
+}
